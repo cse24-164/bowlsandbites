@@ -1,0 +1,94 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Theme colors */
+:root {
+  --primary-brown: #ad805e;
+  --light-brown: #D9C9B3;
+  --white: #FFFFFF;
+}
+
+/* Header */
+header {
+  background: var(--primary-brown);
+  color: var(--white);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav a {
+  color: var(--white);
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: var(--light-brown);
+}
+
+/* Hero */
+.hero {
+  background: url('hero-food.jpg') center/cover no-repeat;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+}
+
+.hero-content {
+  background: rgba(139,94,60,0.8); /* semi-transparent overlay */
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.hero button {
+  margin-top: 15px;
+  padding: 12px 25px;
+  font-size: 1em;
+  background: var(--white);
+  color: var(--primary-brown);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.hero button:hover {
+  background: var(--light-brown);
+  color: var(--white);
+}
+
+/* Sections */
+section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.section-light {
+  background: var(--white);
+  color: var(--primary-brown);
+}
+
+.section-dark {
+  background: var(--primary-brown);
+  color: var(--white);
+}
+
+/* Footer */
+footer {
+  background: #5C3A21;
+  color: var(--white);
+  padding: 20px;
+  text-align: center;
+}
