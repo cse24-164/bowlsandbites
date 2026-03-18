@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bowls and Bites - Reviews</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="img/logo.jpg" alt="Bowls and Bites Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#menu">Menu</a>
+      <a href="index.html#location">Location</a>
+      <a href="contact.html" class="active">Reviews</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero review-hero">
+    <div class="hero-content">
+      <h1>Leave a Review</h1>
+      <p>We’d love to hear your feedback!</p>
+    </div>
+  </section>
+
+  <!-- Review Section -->
+  <section class="contact-section">
+    <div class="container">
+
+      <div class="review-section">
+        <form id="review-form">
+          <h3>Submit Your Review</h3>
+
+          <label for="review-name">Name*</label>
+          <input type="text" id="review-name" placeholder="Your name" required>
+
+          <label for="review-text">Review*</label>
+          <textarea id="review-text" placeholder="Write your review here..." required></textarea>
+
+          <label for="review-rating">Rating*</label>
+          <select id="review-rating" required>
+            <option value="">Select rating</option>
+            <option>5 - Excellent</option>
+            <option>4 - Very Good</option>
+            <option>3 - Good</option>
+            <option>2 - Fair</option>
+            <option>1 - Poor</option>
+          </select>
+
+          <button type="submit">Submit Review</button>
+        </form>
+
+        <div id="reviews-display">
+          <h4>Customer Reviews</h4>
+          <ul id="reviews-list"></ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>Contact us at: info@bowlsandbites.com </p>
+    <p>© 2026 Bowls & Bites</p>
+  </footer>
+
+  <script>
+    // Simple client-side review storage
+    const reviewForm = document.getElementById('review-form');
+    const reviewsList = document.getElementById('reviews-list');
+
+    reviewForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('review-name').value;
+      const text = document.getElementById('review-text').value;
+      const rating = document.getElementById('review-rating').value;
+
+      const li = document.createElement('li');
+      li.innerHTML = `<strong>${name}</strong> (${rating})<br>${text}`;
+      reviewsList.appendChild(li);
+
+      reviewForm.reset();
+    });
+  </script>
+
+</body>
+</html>

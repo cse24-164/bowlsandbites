@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bowls and Bites </title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papercodehashhere" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="img/logo.jpg" alt="Bowls and Bites Logo">
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html"class="active">Menu</a>
+      <a href="contact.html">Contact</a>
+
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero review-hero">
+    <div class="hero-content">
+      <h1>Reach Out</h1>
+      <p>We’d love to hear from you!</p>
+      <button onclick="location.href='#menu'">Contact Us</button>
+    </div>
+  </section>
+
+  <!-- Location Section -->
+<section id="location" class="section-light">
+  <div class="split">
+
+    <!-- Left: Text -->
+    <div class="split-text">
+      <h2>Find Us at the BAC Main Campus</h2>
+      <p>Come grab your nutritious meals between classes! Our cafeteria is easy to find — just look for the Bowls & Bites sign.</p>
+      <p><strong>Operating Hours:</strong> Mon - Fri, 8:30 a.m. - 6:00 p.m.</p>
+    </div>
+
+    <!-- Right: Map / Image -->
+    <div class="split-carousel">
+      <!-- Example: Google Maps embed -->
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.123456789!2d25.9654321!3d-24.654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x196dabc123456789%3A0xabcdef1234567890!2sBAC%20Main%20Campus!5e0!3m2!1sen!2s!4v1670000000000!5m2!1sen!2s" 
+        width="100%" 
+        height="100%" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+  </div>
+</section>
+
+  <section class="hero">
+    <div class= "hero-content">
+      <h1>Leave a Review</h1>
+      <p>We'd love to know about your experience with us! </p>
+      <button onclick="location.href='#menu'" class="btn-primary">Review</button>
+    </div>
+  </section>
+
+
+<!-- Modal -->
+<div id="review-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h3>Submit Your Review</h3>
+
+    <form id="review-form">
+      <label for="review-name">Name*</label>
+      <input type="text" id="review-name" placeholder="Your name" required>
+
+      <label for="review-text">Review*</label>
+      <textarea id="review-text" placeholder="Write your review here..." required></textarea>
+
+      <label for="review-rating">Rating*</label>
+      <select id="review-rating" required>
+        <option value="">Select rating</option>
+        <option>5 - Excellent</option>
+        <option>4 - Very Good</option>
+        <option>3 - Good</option>
+        <option>2 - Fair</option>
+        <option>1 - Poor</option>
+      </select>
+
+      <button type="submit">Submit Review</button>
+    </form>
+  </div>
+</div>
+
+<script>
+// Get elements
+const modal = document.getElementById("review-modal");
+const openBtn = document.getElementById("open-review-btn");
+const closeBtn = document.querySelector(".close-btn");
+
+// Open modal
+openBtn.addEventListener("click", () => {
+  modal.style.display = "flex";
+});
+
+// Close modal
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Close if clicking outside content
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
+</script>
+
+<footer>
+  <div class="footer-container">
+
+    <!-- Left: Logo -->
+    <div class="footer-logo">
+      <h4>Bowls & Bites</h4>
+      </div>
+
+   <!-- Center: Social Media -->
+<div class="footer-socials">
+  <h4>Operating Times</h4>
+  <h4>Mon - Fri 8:30a.m. - 6:00p.m</h4>
+  <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+  <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+</div>
+
+    <!-- Right: Quick Links -->
+    <div class="footer-links">
+      <h4>Explore</h4>
+      <a href="about.html">ABOUT</a>
+      <a href="index.html#menu">MENU</a>
+      <a href="contact.html">CONTACT</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Bowls & Bites. All Rights Reserved.</p>
+  </div>
+</footer>
+
+  <script>
+    // Simple client-side review storage
+    const reviewForm = document.getElementById('review-form');
+    const reviewsList = document.getElementById('reviews-list');
+
+    reviewForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('review-name').value;
+      const text = document.getElementById('review-text').value;
+      const rating = document.getElementById('review-rating').value;
+
+      const li = document.createElement('li');
+      li.innerHTML = `<strong>${name}</strong> (${rating})<br>${text}`;
+      reviewsList.appendChild(li);
+
+      reviewForm.reset();
+    });
+  </script>
+
+</body>
+</html>

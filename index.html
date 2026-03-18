@@ -3,53 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>School Eats - Home</title>
+  <title>Bowls and Bites</title>
   <link rel="stylesheet" href="styles.css">
+  <!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
   <header>
-    <div class="logo"><h2>School Eats</h2></div>
+    <div class="logo">
+  <img src="img/logo.jpg" alt="Bowls and Bites Logo">
+</div>
     <nav>
-      <a href="#">Home</a>
-      <a href="#menu">Menu</a>
-      <a href="#promo">Monthly World Bite</a>
-      <a href="#location">Location</a>
-      <a href="#contact">Contact</a>
+      <a href="#"class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Fresh, Nutritious & Delicious!</h1>
-      <p>Nutritious meals for students and staff.</p>
+    <div class= "hero-content">
+      <h1>Nutritious & Delicious</h1>
+      <p>Breakfast or Lunch? We've got you. Delicous on-the-go bites and meals on the BAC Campus. </p>
       <button onclick="location.href='#menu'">Explore Menu</button>
     </div>
   </section>
 
-  <!-- Menu / General Description -->
+  <!-- About Section -->
+<section id="about" class="section-about">
+  <div class="about-container">
+    <h1>About Bowls & Bites</h1>
+    <p>
+      Bowls & Bites is committed to providing fresh, nutritious, and delicious meals for students and staff at BAC. 
+      From wholesome bowls to tasty wraps and smoothies. </p>
+     <button class="btn-primary" onclick="location.href='#menu'">Learn More</button>
+    </div>
+   
+    </p>
+  </div>
+</section>
+
   <section id="menu" class="section-light">
-    <h2>Our Menu</h2>
-    <p>We provide a variety of bites, drinks, and wholesome bowls to fuel your day. Choose from wraps, fresh salads, smoothies, and hearty meals with nutritious ingredients.</p>
+  <div class="split">
+
+    <!-- Text Half -->
+    <div class="split-text">
+      <h1>Our Menu</h1>
+      <p>We provide a variety of bites, drinks, and wholesome bowls to fuel your day. Choose from wraps, fresh salads, smoothies, and hearty meals with nutritious ingredients.</p>
+
+      <button onclick="location.href='#menu'" class="btn-primary">Explore Menu</button>
+    </div>
+
+    <!-- Carousel Half -->
+    <div class="split-carousel">
+      <div class="carousel-slide">
+        <img src="img/meal.jpg" alt="Mea;">
+        <img src="img/wrap.jpg" alt="Wrap">
+        <img src="img/smoothies.jpg" alt="Smoothie">
+      </div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+
+  </div>
+</section>
+
+<script>
+const slideContainer = document.querySelector('.carousel-slide');
+const slides = document.querySelectorAll('.carousel-slide img');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+
+let currentIndex = 0;
+const totalSlides = slides.length;
+const transitionTime = 1500; // matches CSS transition 1.5s
+const displayTime = 5000;    // how long each image stays fully visible
+
+function showSlide(index) {
+  if(index < 0) currentIndex = totalSlides - 1;
+  else if(index >= totalSlides) currentIndex = 0;
+  else currentIndex = index;
+
+  slideContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+// Button events
+prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+
+// Auto-slide
+let autoSlide = setInterval(() => showSlide(currentIndex + 1), displayTime + transitionTime);
+
+const carousel = document.querySelector('.split-carousel');
+carousel.addEventListener('mouseenter', () => clearInterval(autoSlide));
+carousel.addEventListener('mouseleave', () => {
+  autoSlide = setInterval(() => showSlide(currentIndex + 1), displayTime + transitionTime);
+});
+</script>
+
+  <!-- Contact Page -->
+   <section class="hero">
+    <div class= "hero-content">
+      <h1>Get in Touch</h1>
+      <p>We're Ready to Serve you</p>
+      <button onclick="location.href='#menu'">Contact Us</button>
+    </div>
   </section>
 
-  <!-- Monthly World Bite -->
-  <section id="promo" class="section-dark">
-    <h2>Monthly World Bite</h2>
-    <p>This month’s special: <strong>The Bao Bun!</strong> Try it while it lasts — a flavorful treat from around the world.</p>
-  </section>
+  
+<footer>
+  <div class="footer-container">
 
-  <!-- Location -->
-  <section id="location" class="section-light">
-    <h2>Where to Find Us</h2>
-    <p><strong>BAC Main Campus Cafeteria</strong> — come grab your meals between classes!</p>
-  </section>
+    <!-- Left: Logo -->
+    <div class="footer-logo">
+      <h4>Bowls & Bites</h4>
+      </div>
 
-  <footer>
-    <p>Contact us at: info@schooleats.com </p>
-    <p>© 2026 Bowls & Bites</p>
-  </footer>
+   <!-- Center: Social Media -->
+<div class="footer-socials">
+  <h4>Operating Times</h4>
+  <h4>Mon - Fri 8:30a.m. - 6:00p.m</h4>
+  <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+  <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+</div>
+
+    <!-- Right: Quick Links -->
+    <div class="footer-links">
+      <h4>Explore</h4>
+      <a href="about.html">ABOUT</a>
+      <a href="index.html#menu">MENU</a>
+      <a href="contact.html">CONTACT</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Bowls & Bites. All Rights Reserved.</p>
+  </div>
+</footer>
 
 </body>
 </html>
