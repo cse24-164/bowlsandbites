@@ -187,11 +187,7 @@ h1 {
   background: #333333;
 }
 
-/* HERO */
-.hero h1 {
-  font-size: 2.8rem;
-  letter-spacing: 1px;
-}
+
 
 .hero p {
   font-size: 1.2rem;
@@ -354,7 +350,7 @@ footer {
   justify-content: space-between; /* equal spacing */
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 20px; /* space between columns */
+  gap: 250px; /* space between columns */
 }
 
 /* Left: Logo */
@@ -372,7 +368,7 @@ footer {
 .footer-socials {
   flex: 1;
   min-width: 200px;
-  text-align: center;
+  text-align: left;
 }
 
 .footer-socials h4 {
@@ -396,7 +392,7 @@ footer {
 .footer-links {
   flex: 1;
   min-width: 200px;
-  text-align: right;
+  text-align: left;
 }
 
 .footer-links h4 {
@@ -419,7 +415,7 @@ footer {
 /* Bottom copyright */
 .footer-bottom {
   text-align: center;
-  margin-top: 10rem;
+  margin-top: 20px;
   font-size: 0.9rem;
   color: #333;
 }
@@ -693,38 +689,60 @@ footer {
   .split-carousel {
     height: 350px;
   }
+}
 
+/* =========================
+   MOBILE (up to 768px)
+========================= */
+@media (max-width: 768px) {
+
+  /* Show hamburger */
   .menu-toggle {
-  display: block;
+    display: block;
+  }
+
+  /* Mobile nav */
+  nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 1000;
+  }
+
+  nav a {
+    margin: 15px 0;
+  }
+
+  nav.active {
+    max-height: 300px;
+    opacity: 1;
+  }
+
+  /* Footer stacked */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-links,
+  .footer-socials,
+  .footer-logo {
+    text-align: center;
+    margin-top: 2rem;  /* closer together on mobile */
+  }
 }
 
-nav {
-  position: absolute;
-  top: 80px;
-  right: 0;
-  background: white;
-  width: 100%;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-
-  transition: all 0.4s ease;
-}
-
-nav a {
-  margin: 15px 0;
-}
-
-nav.active {
-  max-height: 300px;
-}
-
-}
 
 /* SECTION ANIMATION BASE */
 .section-hidden {
