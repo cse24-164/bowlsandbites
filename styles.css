@@ -318,8 +318,8 @@ ul li {
 
 /* Footer base */
 footer {
-  background: #ebaa3a; /* golden-orange */
-  color: #000;
+  background: #906213; 
+  color: #ede6e6;
   font-family: 'Poppins', sans-serif;
   padding: 40px 20px 20px 20px;
 }
@@ -360,14 +360,14 @@ footer {
 .footer-socials a {
   display: block;
   margin-bottom: 10px;
-  color: #000;
+  color: #ede6e6;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
 }
 
 .footer-socials a:hover {
-  color: #D6BFA9;
+  color: #906213;
 }
 
 /* Right: Quick Links */
@@ -384,7 +384,7 @@ footer {
 .footer-links a {
   display: block;
   margin-bottom: 10px;
-  color: #000;
+  color: #D6BFA9;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
@@ -653,4 +653,84 @@ footer {
   margin: 10px 0;
   font-size: 1.1rem;
   background-color: #ebaa3a;;
+}
+
+/* =========================
+   SMALL LAPTOPS (769px - 1024px)
+========================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .menu-card {
+    flex: 1 1 30%;
+  }
+
+  .bowl-step {
+    flex: 1 1 30%;
+  }
+
+  .split-carousel {
+    height: 350px;
+  }
+
+  .menu-toggle {
+  display: block;
+}
+
+nav {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  background: white;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+nav a {
+  margin: 15px 0;
+}
+
+nav.active {
+  max-height: 300px;
+}
+
+}
+
+/* SECTION ANIMATION BASE */
+.section-hidden {
+  opacity: 0;
+  transform: translateY(60px) scale(0.98);
+  transition: 
+    opacity 1s ease-out,
+    transform 1s ease-out;
+}
+
+.section-show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.menu-card,
+.bowl-step,
+.box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card:hover,
+.bowl-step:hover,
+.box:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+/*Hamburger Menu*/
+
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
 }

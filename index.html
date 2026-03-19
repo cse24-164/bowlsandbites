@@ -20,10 +20,14 @@
       <a href="menu.html">Menu</a>
       <a href="contact.html">Contact</a>
     </nav>
+
+    <div class="menu-toggle" id="menu-toggle">
+  ☰
+</div>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero section-hidden">
     <div class= "hero-content">
       <h1>Nutritious & Delicious</h1>
       <p>Breakfast or Lunch? We've got you. Delicous on-the-go bites and meals on the BAC Campus. </p>
@@ -32,7 +36,7 @@
   </section>
 
   <!-- About Section -->
-<section id="about" class="section-about">
+<section id="about" class="section-about section-hidden" >
   <div class="about-container">
     <h1>About Bowls & Bites</h1>
     <p>
@@ -45,7 +49,7 @@
   </div>
 </section>
 
-  <section id="menu" class="section-light">
+  <section id="menu" class="section-light section-hidden">
   <div class="split">
 
     <!-- Text Half -->
@@ -104,7 +108,7 @@ carousel.addEventListener('mouseleave', () => {
 </script>
 
   <!-- Contact Page -->
-   <section class="hero">
+   <section class="hero section-hidden">
     <div class= "hero-content">
       <h1>Get in Touch</h1>
       <p>We're Ready to Serve you</p>
@@ -144,5 +148,22 @@ carousel.addEventListener('mouseleave', () => {
   </div>
 </footer>
 
+<script>
+  const sections = document.querySelectorAll(".section-hidden");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("section-show");
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+</script>
 </body>
 </html>
