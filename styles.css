@@ -693,10 +693,10 @@ footer {
 
 /* =========================
    MOBILE (up to 768px)
-========================= */
+/* ===== MOBILE STYLES ===== */
 @media (max-width: 768px) {
 
-  /* Show hamburger */
+  /* Show hamburger icon */
   .menu-toggle {
     display: block;
   }
@@ -704,7 +704,7 @@ footer {
   /* Mobile nav */
   nav {
     position: absolute;
-    top: 70px;
+    top: 70px;            /* below header */
     right: 0;
     width: 100%;
     background: var(--white);
@@ -720,6 +720,7 @@ footer {
 
   nav a {
     margin: 15px 0;
+    text-align: center;
   }
 
   nav.active {
@@ -727,18 +728,30 @@ footer {
     opacity: 1;
   }
 
-  /* Footer stacked */
+  /* Footer stacked for mobile */
   .footer-container {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 2rem; /* less space between columns */
   }
 
   .footer-links,
   .footer-socials,
   .footer-logo {
     text-align: center;
-    margin-top: 2rem;  /* closer together on mobile */
+    margin-top: 1.5rem; 
+  }
+
+  /* Hero adjustments for mobile */
+  .hero h1 {
+    font-size: 2rem;       /* smaller and consistent with other sections */
+    letter-spacing: 0.5px; /* less spacing */
+    margin-bottom: 15px;   /* consistent with section headings */
+  }
+
+  .hero p {
+    font-size: 1rem;       /* slightly smaller for mobile */
   }
 }
 
