@@ -699,6 +699,10 @@ footer {
   /* Show hamburger icon */
   .menu-toggle {
     display: block;
+    color: #ebaa3a;          
+    font-size: 2.2rem;
+    cursor: pointer;
+    z-index: 1001;  
   }
 
   /* Mobile nav */
@@ -721,6 +725,9 @@ footer {
   nav a {
     margin: 15px 0;
     text-align: center;
+    color: #000;        
+    font-weight: 500;
+    text-decoration: none;
   }
 
   nav.active {
@@ -733,14 +740,14 @@ footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 2rem; /* less space between columns */
+    gap: 1.5rem; 
   }
 
   .footer-links,
   .footer-socials,
   .footer-logo {
     text-align: center;
-    margin-top: 1.5rem; 
+    margin-top:0; 
   }
 
   /* Hero adjustments for mobile */
