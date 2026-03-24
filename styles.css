@@ -152,7 +152,7 @@ h1 {
 
 .hero p {
   font-size: 1.1em;
-  font-weight: 300;
+  font-weight: 450;
 }
 
 /* Button */
@@ -673,6 +673,39 @@ footer {
   background-color: #ebaa3a;;
 }
 
+.subscriptions {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.subscription-cards {
+  display: flex;
+  gap: 40px; 
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.s-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px;
+  max-width: 100%; 
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  flex: 1 1 280px; 
+}
+.s-card h2 {
+  margin-bottom: 20px;
+  
+}
+
+
+.subscriptions p {
+  margin-bottom: 30px; /* space between header paragraph and cards */
+  line-height: 1.6; /* makes paragraph easier to read */
+}
+
 /* =========================
    SMALL LAPTOPS (769px - 1024px)
 ========================= */
@@ -767,10 +800,8 @@ footer {
 /* SECTION ANIMATION BASE */
 .section-hidden {
   opacity: 0;
-  transform: translateY(60px) scale(0.98);
-  transition: 
-    opacity 1s ease-out,
-    transform 1s ease-out;
+  transform: translateY(40px) scale(0.97);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .section-show {

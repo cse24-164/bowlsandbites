@@ -27,7 +27,7 @@
     <div class="hero-content">
       <h1>Reach Out</h1>
       <p>We’d love to hear from you!</p>
-      <button onclick="location.href='#menu'">Contact Us</button>
+      <button onclick="window.open('https://wa.me/26771422859', '_blank')"> Contact Us</button>
     </div>
   </section>
 
@@ -63,7 +63,7 @@
     <div class= "hero-content">
       <h1>Leave a Review</h1>
       <p>We'd love to know about your experience with us! </p>
-      <button onclick="location.href='#menu'" class="btn-primary">Review</button>
+      <button id="open-review-btn" class="btn-primary">Leave a Review</button>
     </div>
   </section>
 
@@ -95,6 +95,25 @@
     </form>
   </div>
 </div>
+
+<script>
+function submitReview(e) {
+  e.preventDefault(); // prevent default form submission
+
+  const name = encodeURIComponent(document.getElementById("review-name").value);
+  const review = encodeURIComponent(document.getElementById("review-text").value);
+  const rating = encodeURIComponent(document.getElementById("review-rating").value);
+
+  // Create mailto link
+  const mailtoLink = `mailto:msmaipelo@gmail.com?subject=New Review from ${name}&body=Name: ${name}%0D%0AReview: ${review}%0D%0ARating: ${rating}`;
+
+  // Open email client
+  window.location.href = mailtoLink;
+
+  // Optionally close modal
+  document.getElementById("review-modal").style.display = "none";
+}
+</script>
 
 <script>
 // Get elements
@@ -131,10 +150,12 @@ window.addEventListener("click", (e) => {
 
    <!-- Center: Social Media -->
 <div class="footer-socials">
-  <h4>Follow Us</h4>
+  <h4>Get in Touch</h4>
 
   <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-  <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  <a href="https://wa.me/26771422859" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i> WhatsApp
+  </a>
 </div>
 
     <!-- Right: Quick Links -->
